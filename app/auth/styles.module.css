@@ -64,16 +64,13 @@
     font-weight: 500;
 }
 .formEnd {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     margin: 15px 0 ;
-    font-size: 14px ;
 }
-.rememberCheck {
+.rememberCheck, .formEnd {
     display:flex ;
     align-items: center;
     justify-content: space-between;
+    font-size: 14px;
 }
 @media screen and (max-width: 970px) {
     .illustrationWrapper {
@@ -83,13 +80,11 @@
         width: 100%;
     }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 425px) {
     .formContainer {
         max-width: 85vw;
         min-width: 0;
     }
-}
-@media screen and (max-width: 375px) {
     .formEnd, .rememberCheck {
         flex-direction: column;
         align-items: flex-start;

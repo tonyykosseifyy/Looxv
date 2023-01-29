@@ -86,7 +86,7 @@ const Auth = (props) => {
       </form>
 
       <div className={styles.formEnd}>
-        <p>{ login ? "Don't have an account? Create account" : "Already have an account?"}</p>
+        <p>{ login ? "Don't have an account?" : "Already have an account?"}</p>
         <CustomLink href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
       </div>
     </div>
