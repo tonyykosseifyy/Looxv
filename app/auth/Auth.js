@@ -22,7 +22,7 @@ const Auth = (props) => {
     return !regex.test(email);
   }
   return (
-		<div className={styles.formDetails}>
+		<div className={styles.formContainer}>
       <h1>{ login ? "Log in to your account": "Create your account"}</h1>
       <div className={styles.socialButtons}>
         <CustomButton>Sign in with Google</CustomButton>
@@ -76,7 +76,7 @@ const Auth = (props) => {
           <div>
             <Checkbox checked={check} onClick={() => setCheck(!check)} />
           </div>
-          <p style={{fontSize:"16px"}}>I agree to Terms of Service & Privacy Policy</p>
+          <p style={{fontSize:"15px"}}>I agree to Terms of Service & Privacy Policy</p>
         </div>
         }
 

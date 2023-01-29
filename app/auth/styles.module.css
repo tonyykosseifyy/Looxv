@@ -1,9 +1,9 @@
-.wrapper {
+.authWrapper {
     display: flex;
     min-height: 100vh ;
 }
 
-.svgWrapper {
+.illustrationWrapper {
     background-color: var(--light-blue);
     flex: 1 ;
     display: flex;
@@ -22,10 +22,10 @@
     display: flex;
     justify-content: center;
 }
-.formDetails {
+.formContainer {
     min-width: 330px ;
 }
-.formDetails > h1 {
+.formContainer > h1 {
     font-weight: 400 ;
     margin-bottom: 25px ;
 }
@@ -58,7 +58,7 @@
 }
 
 @media screen and (max-width: 970px) {
-    .svgWrapper {
+    .illustrationWrapper {
         display: none;
     }
     .formWrapper {
@@ -66,7 +66,7 @@
     }
 }
 @media screen and (max-width: 450px) {
-    .formDetails {
+    .formContainer {
         max-width: 85vw;
         min-width: 0;
     }

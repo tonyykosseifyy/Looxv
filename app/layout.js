@@ -1,19 +1,30 @@
+"use client"
 import "../styles/globals.css";
-import { Open_Sans } from '@next/font/google';
+import { Inter } from '@next/font/google';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const openSans = Open_Sans({
+const inter = Inter({
   weight: ["300","400","500","600","700","800"],
   subsets:["latin"]
 });
 
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Inter, sans-serif'
+}});
 
 const RootLayout = ({ children }) => {
   return (
-    <html className={openSans.className}>
+    <html className={inter.className}>
       <head />
-      <body>{children}</body>
+      <body>
+        <ThemeProvider theme={theme}>
+          {children}
+        </ThemeProvider>
+        
+      </body>
     </html>
-  )
+  );
 };
 
 export default RootLayout;
