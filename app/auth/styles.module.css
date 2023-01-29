@@ -1,0 +1,6 @@
+.wrapper {
+    display: flex;
+    background-color: var(--light-blue);
+    width: 100vw ;
+    height: 100vh ;
+}
