@@ -15,6 +15,6 @@ const authLayout = ({ children }) => {
         
       </section>
     );
-}
+};
 
 export default authLayout ;

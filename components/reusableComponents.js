@@ -1,17 +1,21 @@
-import styles from "./styles.module.css";
 import Button from '@mui/material/Button';
 
-export const LoginButton = (props) => {
+
+export const CustomButton = (props) => {
     const { children , ...rest } = props ;
     return (
-        <Button 
-            variant="contained" 
-            sx={{
-                fontFamily: "Open Sans, sans-serif",
-                margin:"10px 0",
-                fontWeight: "bold"
-        }}
-        >{children}</Button>
-    )
+      <Button 
+				{...rest}
+        variant="contained" 
+          sx={{
+            margin:"10px 0",
+						fontWeight: "500",
+						textTransform: "none"
+        	}}
+        >
+					{children}
+			</Button>
+    );
 };
+
 

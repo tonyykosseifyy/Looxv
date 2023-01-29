@@ -1,9 +1,12 @@
 import React from 'react'
+import Auth from "../Auth";
 
 function Login() {
   return (
-    <div>login</div>
-  )
-}
+    <div>
+      <Auth login />
+    </div>
+  );
+};
 
 export default Login;

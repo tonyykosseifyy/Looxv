@@ -1,7 +1,6 @@
 .wrapper {
     display: flex;
-    width: 100vw ;
-    height: 100vh ;
+    min-height: 100vh ;
 }
 
 .svgWrapper {
@@ -19,7 +18,7 @@
 }
 .formWrapper {
     width: 620px;
-    padding-top: 12vh ;
+    padding: 12vh 0px 4vh 0;
     display: flex;
     justify-content: center;
 }
@@ -51,11 +50,24 @@
 .formControl > div {
     margin: 10px 0 ;
 }
+.submitContainer {
+    display: flex;
+    align-items: center;
+    color: var(--light-grey);
+    font-weight: 500;
+}
+
 @media screen and (max-width: 970px) {
     .svgWrapper {
         display: none;
     }
     .formWrapper {
         width: 100%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .formDetails {
+        max-width: 85vw;
+        min-width: 0;
     }
 }
