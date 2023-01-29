@@ -1,9 +1,10 @@
+import HeadTags from "../components/headTags";
+
 export default function Head() {
   return (
     <>
+      <HeadTags />
       <title>Looxv Editor</title>
-      <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <link rel="icon" href="/favicon.ico" />
     </>
   );
 };
