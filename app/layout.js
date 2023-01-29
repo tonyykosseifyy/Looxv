@@ -21,7 +21,6 @@ const RootLayout = ({ children }) => {
         <ThemeProvider theme={theme}>
           {children}
         </ThemeProvider>
-        
       </body>
     </html>
   );

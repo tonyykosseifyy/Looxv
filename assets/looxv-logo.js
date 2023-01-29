@@ -31,7 +31,7 @@ export const Logo = () => (
 
 export const LogoDark = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" version="1.1" width="566.929pt" height="129.944pt" viewBox="0 0 566.929 129.944">
-<g enable-background="new">
+<g enableBackground="new">
 <g id="Layer-1" data-name="Layer 1">
 </g>
 <g id="Layer-1" data-name="Layer 2">

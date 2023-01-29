@@ -1,10 +1,11 @@
 'use client'
 import React, { useState } from 'react'
 import styles from "./styles.module.css";
-import { CustomButton } from '../../components/reusableComponents';
+import { CustomButton, CustomLink } from '../../components/reusableComponents';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
+
 
 const Auth = (props) => {
   const { login } = props ;
@@ -68,7 +69,7 @@ const Auth = (props) => {
             </div>
             <p style={{fontSize:"16px"}}>Remember me</p>
           </div>
-          <p>Forgot password?</p>
+          <CustomLink href="/">Forgot password?</CustomLink>
           
         </div>
         :
@@ -80,7 +81,7 @@ const Auth = (props) => {
         </div>
         }
 
-        <CustomButton disabled={isDisabled()}>{login ? "Log In": "Create Accout"}</CustomButton>
+        <CustomButton disabled={isDisabled()}>{login ? "Log In": "Create Account"}</CustomButton>
         
       </form>
     </div>

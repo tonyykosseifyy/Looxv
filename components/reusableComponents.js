@@ -1,4 +1,6 @@
 import Button from '@mui/material/Button';
+import styles from "./styles.module.css";
+import Link from 'next/link';
 
 
 export const CustomButton = (props) => {
@@ -17,5 +19,10 @@ export const CustomButton = (props) => {
 			</Button>
     );
 };
-
+export const CustomLink = (props) => {
+  const { children, ...rest} = props ;
+  return (
+    <Link {...rest} className={styles.customLink}>{children}</Link>
+  )
+}
 
