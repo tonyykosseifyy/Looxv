@@ -6,7 +6,8 @@
 }
 
 :root {
-  --light-blue: rgb(23,116,255) ;
+  --light-blue: rgb(25,118,210) ;
+  --light-grey: rgb(150,159,175);
 }
 
 a {

@@ -1,0 +1,14 @@
+.button {
+    border: 0.1px solid var(--light-blue) ;
+    background-color: var(--light-blue);
+    color: white ;
+    cursor: pointer;
+    display: flex;
+    padding: 12px 8px ;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    margin: 10px 0px ;
+    width: 100% ;
+    font-weight: bold;
+    justify-content: center;
+}
