@@ -13,6 +13,9 @@ const Auth = (props) => {
   const [ email , setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ check , setCheck ] = useState(false);
+  const isDisabled = () => {
+    return login ? !email || !password || validateEmail(): !check || !name || !email || !password || validateEmail(); 
+  }
   const validateEmail = () => {
     let regex = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$");
     if (!email) return false ;
@@ -77,7 +80,7 @@ const Auth = (props) => {
         </div>
         }
 
-        <CustomButton>{login ? "Log In": "Create Accout"}</CustomButton>
+        <CustomButton disabled={isDisabled()}>{login ? "Log In": "Create Accout"}</CustomButton>
         
       </form>
     </div>
