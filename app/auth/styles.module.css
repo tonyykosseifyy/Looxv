@@ -10,6 +10,13 @@
     flex-direction: column;
     padding: 2vh 6vw ;
 }
+.illustrationWrapper img {
+    width: 100% ;
+    height: 100% ;
+    align-self: center;
+    object-fit: contain;
+}
+
 .bar {
     width: 100% ;
     height: 1px ;
@@ -63,6 +70,11 @@
     margin: 15px 0 ;
     font-size: 14px ;
 }
+.rememberCheck {
+    display:flex ;
+    align-items: center;
+    justify-content: space-between;
+}
 @media screen and (max-width: 970px) {
     .illustrationWrapper {
         display: none;
@@ -75,5 +87,17 @@
     .formContainer {
         max-width: 85vw;
         min-width: 0;
+    }
+}
+@media screen and (max-width: 375px) {
+    .formEnd, .rememberCheck {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .formEnd > a {
+        margin: 7px 0 ;
+    }
+    .rememberCheck > a {
+        align-self: flex-end;
     }
 }

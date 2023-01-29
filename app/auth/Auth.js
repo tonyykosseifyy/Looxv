@@ -62,7 +62,7 @@ const Auth = (props) => {
           />
         </FormControl>
         {login ? 
-        <div style={{display:"flex",alignItems: "center",justifyContent:"space-between"}}>
+        <div className={styles.rememberCheck}>
           <div style={{display: "flex",alignItems: "center"}}>
             <div>
               <Checkbox checked={check} onClick={() => setCheck(!check)} />

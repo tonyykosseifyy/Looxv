@@ -7,7 +7,7 @@ const authLayout = ({ children }) => {
       <section className={styles.authWrapper}>
         <div className={styles.illustrationWrapper}>
           <LogoDark style={{width: "200px"}} />
-          
+          {/* <Image src={"/login2.png"} width={100} height={100} alt="asdas"/> */}
         </div>
         
         <div className={styles.formWrapper}>
