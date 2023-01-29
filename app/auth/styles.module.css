@@ -56,7 +56,13 @@
     color: var(--light-grey);
     font-weight: 500;
 }
-
+.formEnd {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 ;
+    font-size: 14px ;
+}
 @media screen and (max-width: 970px) {
     .illustrationWrapper {
         display: none;
