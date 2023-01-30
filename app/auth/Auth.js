@@ -15,7 +15,6 @@ const IconsContainer = ({children}) => {
 
 
 function scrollToTop() {
-    console.log("scrolled")
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
