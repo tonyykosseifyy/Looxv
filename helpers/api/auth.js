@@ -21,10 +21,13 @@ export const register = async (name, email, password) => {
             password,
             password_confirmation: password
         });
-        return { data } = response ;
+        const { data, statusText } = response ;
+
+        return { data, message:statusText } ;
     } catch(error) {
-        console.log(error.message);
-        
+        console.log(error.response.data.message)
+        const { response } = error ;
+        return { message: response.data.message } ;
     }
 };
 
@@ -46,3 +49,4 @@ export const signOut = async () => {
         console.log(error);
     }
 }
+

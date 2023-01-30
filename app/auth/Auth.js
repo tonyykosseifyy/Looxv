@@ -1,13 +1,12 @@
 'use client'
 import React, { useState } from 'react'
 import styles from "./styles.module.css";
-import { CustomButton, CustomLink } from '../../components/reusableComponents';
+import { CustomButton, CustomLink, CustomizedSnackbars } from '../../components/reusableComponents';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
 import { FcGoogle } from "react-icons/fc";
 import { register } from '../../helpers/api/auth';
-
 
 const IconsContainer = ({children}) => {
   return (
@@ -26,7 +25,9 @@ const Auth = (props) => {
   const [ email , setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ check , setCheck ] = useState(false);
-
+  const [ alertMessage , setAlertMessage ] = useState("");
+  const [ error, setError ] = useState(false);
+  const [ open , setOpen ] = useState(false);
   const isDisabled = () => {
     return login ? !email || !password || validateEmail(): !check || !name || !email || !password || validateEmail(); 
   }
@@ -35,11 +36,24 @@ const Auth = (props) => {
     if (!email) return false ;
     return !regex.test(email);
   }
+  const handleResponse = (error, message) => {
+    setError(error);
+    setAlertMessage(message);
+    setOpen(true);
+  }
   const handleSubmit = async () => {
     console.log("heyy");
     if (!login) {
       const response = await register(name, email, password);
-      console.log(response);
+      const { data, message } = response ;
+      if (!data) {
+        console.log("error")
+        handleResponse(true, message);
+      } else {
+        handleResponse(false, message);
+      }
+      
+      // token => data.token
     }
   }
   return (
@@ -109,6 +123,13 @@ const Auth = (props) => {
         <p>{ login ? "Don't have an account?" : "Already have an account?"}</p>
         <CustomLink scroll={false} onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
       </div>
+      <CustomizedSnackbars
+        message={alertMessage}
+        open={open}
+        close={() => setOpen(false)}
+        severity={error ? "error": "success"}
+      /> 
+
     </div>
   )
 };
