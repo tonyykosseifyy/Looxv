@@ -13,6 +13,12 @@ const IconsContainer = ({children}) => {
   )
 }
 
+
+function scrollToTop() {
+    console.log("scrolled")
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 const Auth = (props) => {
   const { login } = props ;
   const [ showPassword , setShow ] = useState(false);
@@ -93,7 +99,7 @@ const Auth = (props) => {
 
       <div className={styles.formEnd}>
         <p>{ login ? "Don't have an account?" : "Already have an account?"}</p>
-        <CustomLink href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
+        <CustomLink onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
       </div>
     </div>
   )
