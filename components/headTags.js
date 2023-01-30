@@ -5,4 +5,4 @@ export default function DefaultTags() {
         <link href="/favicon.ico" rel="shortcut icon" />
       </>
     );
-}
+};

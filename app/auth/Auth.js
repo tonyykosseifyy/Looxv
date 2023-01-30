@@ -5,7 +5,13 @@ import { CustomButton, CustomLink } from '../../components/reusableComponents';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
+import { FcGoogle } from "react-icons/fc";
 
+const IconsContainer = ({children}) => {
+  return (
+    <div className={styles.iconContainer}>{children}</div>
+  )
+}
 
 const Auth = (props) => {
   const { login } = props ;
@@ -26,7 +32,7 @@ const Auth = (props) => {
 		<div className={styles.formContainer}>
       <h1>{ login ? "Log in to your account": "Create your account"}</h1>
       <div className={styles.socialButtons}>
-        <CustomButton>Sign in with Google</CustomButton>
+        <CustomButton startIcon={<IconsContainer><FcGoogle /></IconsContainer>}>Sign in with Google</CustomButton>
         <CustomButton>Sign in with Google</CustomButton>
       </div>
 
