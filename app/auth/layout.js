@@ -1,6 +1,5 @@
 import styles from "./styles.module.css";
 import { LogoDark } from "../../assets/looxv-logo";
-import Image from "next/image";
 import { LoginIllustration } from "../../assets/looxv-logo";
 
 const authLayout = ({ children }) => {
