@@ -25,7 +25,6 @@ export const register = async (name, email, password) => {
 
         return { data, message:statusText } ;
     } catch(error) {
-        console.log(error.response.data.message)
         const { response } = error ;
         return { message: response.data.message } ;
     }

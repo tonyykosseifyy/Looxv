@@ -21,7 +21,7 @@ export const CustomizedSnackbars = (props) => {
   };
 
   return (
-    <Stack {...rest} spacing={2} sx={{ width: '100%' }}>
+    <Stack autoHideDuration={50000} {...rest} spacing={2} sx={{ width: '100%' }}>
       <Snackbar anchorOrigin={{ vertical:"top", horizontal:"center" }} open={open} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={severity} sx={{ width: '100%' }}>
           {message}
