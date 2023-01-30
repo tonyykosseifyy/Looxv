@@ -5,7 +5,7 @@ import { Inter } from '@next/font/google';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useLocalStorage } from "../helpers/localStorage";
 import { useRouter } from 'next/navigation';
-import { Router } from "next/dist/client/router";
+import { signWithEmail } from "../helpers/api/auth";
 
 const inter = Inter({
   weight: ["300","400","500","600","700","800"],
@@ -24,6 +24,7 @@ const RootLayout = ({ children }) => {
   console.log("token",token)
   useEffect(() => {
     if (!token) {
+      signWithEmail();
       router.push("/auth/signup");
     }
   },[])

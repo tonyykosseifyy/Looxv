@@ -3,7 +3,10 @@ const nextConfig = {
     experimental: {
       appDir: true,
     },
-    withImages:withImages
+    // withImages:withImages,
+    env: {
+      BASE_URL: process.env.BASE_URL,
+    }
 };
   
 module.exports = nextConfig;
