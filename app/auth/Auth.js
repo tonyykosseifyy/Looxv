@@ -99,7 +99,7 @@ const Auth = (props) => {
 
       <div className={styles.formEnd}>
         <p>{ login ? "Don't have an account?" : "Already have an account?"}</p>
-        <CustomLink onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
+        <CustomLink scroll={false} onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
       </div>
     </div>
   )
