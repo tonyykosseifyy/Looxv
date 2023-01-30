@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from "./styles.module.css";
 import { CustomButton, CustomLink, CustomizedSnackbars } from '../../components/reusableComponents';
 import OutlinedInput from '@mui/material/OutlinedInput';
@@ -7,6 +7,8 @@ import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
 import { FcGoogle } from "react-icons/fc";
 import { register, signWithEmail } from '../../helpers/api/auth';
+import useTokenStorage from '../../helpers/localStorage';
+import { useRouter } from 'next/navigation';
 
 const IconsContainer = ({children}) => {
   return (
@@ -28,6 +30,8 @@ const Auth = (props) => {
   const [ alertMessage , setAlertMessage ] = useState("");
   const [ error, setError ] = useState(false);
   const [ open , setOpen ] = useState(false);
+  const [ token, updateToken ] = useTokenStorage("token");
+  const router = useRouter();
   const isDisabled = () => {
     return login ? !email || !password || validateEmail(): !check || !name || !email || !password || validateEmail(); 
   }
@@ -46,20 +50,24 @@ const Auth = (props) => {
     const response = login ? await signWithEmail(email, password):await register(name, email, password);
     const { data, message } = response ;
     if (!data) {
-      console.log("error")
       handleResponse(true, message);
     } else {
       handleResponse(false, message);
+      updateToken(data.token);
     }
-      
-      // token => data.token
   }
+  
   const handleClose = () => {
     setName("") ;
     setEmail("");
     setPassword("");
     setOpen(false);
   }
+  useEffect(() => {
+    if (token) {
+      router.push("/");
+    }
+  },[token])
   return (
 		<div className={styles.formContainer}>
       <h1>{ login ? "Log in to your account": "Create your account"}</h1>

@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-export function useLocalStorage() {
-    const [value, setValue] = useState("");
-    useEffect(() => {
-        const stored = localStorage.getItem("token");
-        setValue(stored ? JSON.parse(stored) : "");
-    }, []);
 
-    useEffect(() => {
-        localStorage.setItem("token", JSON.stringify(value));
-    }, [value]);
+function useTokenStorage(key) {
+  const [token, setToken] = useState(() => {
+    return window.localStorage.getItem(key) || '';
+  });
 
-    
-    return [value, setValue] ;
-};
+  function updateToken(newToken) {
+    window.localStorage.setItem(key, newToken);
+    setToken(newToken);
+  }
+
+  return [token, updateToken];
+}
+
+export default useTokenStorage;
