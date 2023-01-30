@@ -1,17 +1,21 @@
 import axios from "./axios";
 
-
-export const signWithEmail = async (email , password) => {
-    try {  
+export const signWithEmail = async (email, password) => {
+    try {
         const response = await axios.post("/api/users/login", {
             email,
-            password
+            password,
         });
+        const { data, statusText } = response ;
         console.log(response);
+        return { data, message:statusText } ;
     } catch(error) {
-        console.log(error);
+        console.log(error)
+        const { response } = error ;
+        return { message: response.data.message } ;
     }
 };
+
 
 export const register = async (name, email, password) => {
     try {

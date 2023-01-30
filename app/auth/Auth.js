@@ -6,7 +6,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
 import { FcGoogle } from "react-icons/fc";
-import { register } from '../../helpers/api/auth';
+import { register, signWithEmail } from '../../helpers/api/auth';
 
 const IconsContainer = ({children}) => {
   return (
@@ -43,18 +43,16 @@ const Auth = (props) => {
   }
   const handleSubmit = async () => {
     console.log("heyy");
-    if (!login) {
-      const response = await register(name, email, password);
-      const { data, message } = response ;
-      if (!data) {
-        console.log("error")
-        handleResponse(true, message);
-      } else {
-        handleResponse(false, message);
-      }
+    const response = login ? await signWithEmail(email, password):await register(name, email, password);
+    const { data, message } = response ;
+    if (!data) {
+      console.log("error")
+      handleResponse(true, message);
+    } else {
+      handleResponse(false, message);
+    }
       
       // token => data.token
-    }
   }
   const handleClose = () => {
     setName("") ;
