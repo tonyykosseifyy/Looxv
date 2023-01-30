@@ -56,6 +56,12 @@ const Auth = (props) => {
       // token => data.token
     }
   }
+  const handleClose = () => {
+    setName("") ;
+    setEmail("");
+    setPassword("");
+    setOpen(false);
+  }
   return (
 		<div className={styles.formContainer}>
       <h1>{ login ? "Log in to your account": "Create your account"}</h1>
@@ -126,7 +132,7 @@ const Auth = (props) => {
       <CustomizedSnackbars
         message={alertMessage}
         open={open}
-        close={() => setOpen(false)}
+        close={() => handleClose()}
         severity={error ? "error": "success"}
       /> 
 
