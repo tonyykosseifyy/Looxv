@@ -1,13 +1,16 @@
 import styles from "./styles.module.css";
 import { LogoDark } from "../../assets/looxv-logo";
 import Image from "next/image";
+import { LoginIllustration } from "../../assets/looxv-logo";
 
 const authLayout = ({ children }) => {
     return (
       <section className={styles.authWrapper}>
         <div className={styles.illustrationWrapper}>
           <LogoDark style={{width: "200px"}} />
-          {/* <Image src={"/login2.png"} width={100} height={100} alt="asdas"/> */}
+          <div>
+            <LoginIllustration />
+          </div>
         </div>
         
         <div className={styles.formWrapper}>
