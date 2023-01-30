@@ -15,14 +15,16 @@ export const signWithEmail = async (email , password) => {
 
 export const register = async (name, email, password) => {
     try {
-        const response = await axios.post("/api/users/login", {
+        const response = await axios.post("/api/users/register", {
             name,
             email,
-            password
+            password,
+            password_confirmation: password
         });
-        console.log(response)
+        return { data } = response ;
     } catch(error) {
-        console.log(error);
+        console.log(error.message);
+        
     }
 };
 

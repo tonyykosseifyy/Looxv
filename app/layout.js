@@ -7,6 +7,7 @@ import { useLocalStorage } from "../helpers/localStorage";
 import { useRouter } from 'next/navigation';
 import { signWithEmail } from "../helpers/api/auth";
 
+
 const inter = Inter({
   weight: ["300","400","500","600","700","800"],
   subsets:["latin"]

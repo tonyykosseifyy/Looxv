@@ -6,17 +6,18 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
 import { FcGoogle } from "react-icons/fc";
+import { register } from '../../helpers/api/auth';
+
 
 const IconsContainer = ({children}) => {
   return (
     <div className={styles.iconContainer}>{children}</div>
   )
-}
-
+};
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+};
 
 const Auth = (props) => {
   const { login } = props ;
@@ -25,6 +26,7 @@ const Auth = (props) => {
   const [ email , setEmail ] = useState("");
   const [ password, setPassword ] = useState("");
   const [ check , setCheck ] = useState(false);
+
   const isDisabled = () => {
     return login ? !email || !password || validateEmail(): !check || !name || !email || !password || validateEmail(); 
   }
@@ -32,6 +34,13 @@ const Auth = (props) => {
     let regex = new RegExp("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$");
     if (!email) return false ;
     return !regex.test(email);
+  }
+  const handleSubmit = async () => {
+    console.log("heyy");
+    if (!login) {
+      const response = await register(name, email, password);
+      console.log(response);
+    }
   }
   return (
 		<div className={styles.formContainer}>
@@ -92,7 +101,7 @@ const Auth = (props) => {
         </div>
         }
 
-        <CustomButton disabled={isDisabled()}>{login ? "Log In": "Create Account"}</CustomButton>
+        <CustomButton onClick={() => handleSubmit()} disabled={isDisabled()}>{login ? "Log In": "Create Account"}</CustomButton>
         
       </form>
 
