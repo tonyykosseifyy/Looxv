@@ -7,7 +7,7 @@ import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
 import { FcGoogle } from "react-icons/fc";
 import { register, signWithEmail } from '../../helpers/api/auth';
-import useTokenStorage from '../../helpers/localStorage';
+import useLocalStorage from '../../helpers/localStorage';
 import { useRouter } from 'next/navigation';
 
 const IconsContainer = ({children}) => {
@@ -30,7 +30,7 @@ const Auth = (props) => {
   const [ alertMessage , setAlertMessage ] = useState("");
   const [ error, setError ] = useState(false);
   const [ open , setOpen ] = useState(false);
-  const [ token, updateToken ] = useTokenStorage("token");
+  const [ token, updateToken ] = useLocalStorage("token","");
   const router = useRouter();
   const isDisabled = () => {
     return login ? !email || !password || validateEmail(): !check || !name || !email || !password || validateEmail(); 

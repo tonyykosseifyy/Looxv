@@ -3,7 +3,7 @@ import "../styles/globals.css";
 import { useEffect } from "react";
 import { Inter } from '@next/font/google';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import useTokenStorage from "../helpers/localStorage";
+import useLocalStorage from "../helpers/localStorage";
 import { useRouter } from 'next/navigation';
 
 
@@ -18,7 +18,7 @@ const theme = createTheme({
 }});
 
 const RootLayout = ({ children }) => {
-  const [ token , updateToken ] = useTokenStorage("token");
+  const [ token , updateToken ] = useLocalStorage("token", "");
   const router = useRouter();
 
   useEffect(() => {
