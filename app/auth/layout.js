@@ -9,9 +9,9 @@ const authLayout = ({ children }) => {
     return (
       <section className={styles.authWrapper} >
         <div className={styles.illustrationWrapper} style={{backgroundColor: theme.palette.primary.main}}>
-          <Image src="/logo.png" width={300} height={170} alt="lxoov-editor" style={{objectFit:"contain"}} />
+          <Image src="/logo.png" width={300} height={170} alt="lxoov-editor" />
           <div>
-            <Image src="/illustration.png" width={865} height={682} alt="lxoov-editor" style={{objectFit:"contain"}} />
+            <Image src="/illustration.png" width={865} height={682} alt="lxoov-editor" />
           </div>
         </div>
         

@@ -1,13 +1,23 @@
 .sidebar_wrapper {
-    background-color: var(--light-blue);
-    min-width: 250px ;
-    padding: 40px 0 40px 20px;
+    width: 250px ;
+    padding: 10px 0 ;
     display: flex;
     flex-direction: column;
     color: white ;
+    box-shadow: 1px 1px 12px rgb(145,145,145);
+}
+.sidebar_logo {
+    align-self: center;
+    margin-bottom: 20px ;
+}
+.sidebar_logo > img {
+    object-fit: contain;
 }
 
-.sidebar_logo > svg {
-    text-align: center;
+.sidebar_wrapper p {
+    color: rgb(145,145,145) ;
+    margin-left: 10px ;
 }
-
+.MuiButtonBase-root {
+    color: black ;
+}

@@ -10,10 +10,12 @@
     padding: 2vh 6vw ;
     position: relative;
 }
+.illustrationWrapper img {
+    object-fit: contain;
+}
 .illustrationWrapper > div > img {
     width: 80%;
     height: 80% ;
-    object-fit: contain;
     position: absolute;
     top: 60%;
     left: 50%;
