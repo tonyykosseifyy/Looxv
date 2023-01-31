@@ -7,7 +7,7 @@
     color: black;
     border: none;
     position: relative;
-    transition: .3s ease ;
+    transition: .15s ease-out ;
     margin: 5px 0 ;
     background-color: white;
     font-weight: bold;

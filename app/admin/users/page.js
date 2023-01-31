@@ -1,8 +1,12 @@
 import React from 'react'
+import UsersTable from "../components/Users";
+import styles from "./styles.module.css";
 
 function Users() {
   return (
-    <div>Users</div>
+    <div className={styles.users_wrapper}>
+      <UsersTable />
+    </div>
   )
 }
 

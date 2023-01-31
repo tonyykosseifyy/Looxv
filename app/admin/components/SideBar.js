@@ -6,7 +6,7 @@ import { Button } from './reusableComponents';
 import { FiSettings } from "react-icons/fi";
 import { TbUsers } from "react-icons/tb";
 
-const SideBar = (props) => {
+const SideBar = () => {
   return (
     <section className={styles.sidebar_wrapper}>
       <div className={styles.sidebar_logo}>

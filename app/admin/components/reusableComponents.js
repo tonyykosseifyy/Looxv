@@ -7,3 +7,10 @@ export const Button = (props) => {
   );
 };
 
+export const UserPaper = (props) => {
+  return (
+    <div>
+
+    </div>
+  )
+};
