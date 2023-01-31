@@ -1,0 +1,39 @@
+.button {
+    padding: 17px 0 17px 15px ;
+    width: 100%;
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    color: black;
+    border: none;
+    position: relative;
+    transition: .3s ease ;
+    margin: 5px 0 ;
+    background-color: white;
+    font-weight: bold;
+}
+.button > p {
+    margin-left: 12px ;
+}
+.button:hover {
+    background-color: rgb(224, 224, 224);
+}
+.button::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(103,180,251);
+    height: 100%;
+    top: 0 ;
+    bottom: 0 ;
+    right: 0 ;
+    width: 2px ;
+    transform: translateX(2px);
+    transition: .3s ease ;
+}
+.buttonActive {
+    background-color: rgb(230,247,255);
+    color: rgb(103,180,251);
+}
+.buttonActive::after {
+    transform: translateX(0px);
+}

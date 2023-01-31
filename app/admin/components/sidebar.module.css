@@ -5,6 +5,7 @@
     flex-direction: column;
     color: white ;
     box-shadow: 1px 1px 12px rgb(145,145,145);
+    overflow-x: hidden;
 }
 .sidebar_logo {
     align-self: center;
@@ -14,9 +15,12 @@
     object-fit: contain;
 }
 
-.sidebar_wrapper p {
+.sidebar_wrapper > p {
     color: rgb(145,145,145) ;
-    margin-left: 10px ;
+    margin-left: 15px ;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 15px; 
 }
 .MuiButtonBase-root {
     color: black ;
