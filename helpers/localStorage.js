@@ -5,11 +5,13 @@ const useLocalStorage = (key,initialState) => {
   useDebugValue(state)
 
   useEffect(() => {
-    const item = localStorage.getItem(key)
+    const item = localStorage.getItem(key);
+    console.log("item", item);
     if (item) setState(parse(item))
   }, [])
 
   useEffect(() => {
+    console.log("state",state);
     if (state !== initialState) {
       localStorage.setItem(key, JSON.stringify(state))
     }

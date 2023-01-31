@@ -1,0 +1,11 @@
+.admin_wrapper {
+    display: flex;
+    height: 100vh ;
+}
+
+.admin_details {
+    display: flex ;
+    flex-direction: column;
+    flex: 1;
+}
+

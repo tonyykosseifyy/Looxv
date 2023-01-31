@@ -1,6 +1,5 @@
 "use client";
 import "../styles/globals.css";
-import { useEffect } from "react";
 import { Inter } from '@next/font/google';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useLocalStorage from "../helpers/localStorage";
@@ -18,14 +17,14 @@ const theme = createTheme({
 }});
 
 const RootLayout = ({ children }) => {
-  const [ token , updateToken ] = useLocalStorage("token", "");
+  const [ token , updateToken ] = useLocalStorage("token","");
   const router = useRouter();
 
-  useEffect(() => {
-    if (!token) {
-      router.push("/auth/signup");
-    }
-  },[])
+  // useEffect(() => {
+  //   if (token === "") {
+  //     router.push("/auth/signup");
+  //   }
+  // },[token])
   return (
     <html className={inter.className}>
       <head />
