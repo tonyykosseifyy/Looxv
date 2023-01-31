@@ -6,9 +6,10 @@ import { useTheme } from "@mui/material/styles";
 
 const authLayout = ({ children }) => {
   const theme = useTheme();
+  console.log(theme);
     return (
-      <section className={styles.authWrapper}>
-        <div className={styles.illustrationWrapper} style={{backgroundColor: theme.palette.primary}}>
+      <section className={styles.authWrapper} >
+        <div className={styles.illustrationWrapper} style={{backgroundColor: theme.palette.primary.main}}>
           <LogoDark style={{width: "200px"}} />
           <div>
             <LoginIllustration />

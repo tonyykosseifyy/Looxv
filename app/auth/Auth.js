@@ -10,6 +10,7 @@ import { register, signWithEmail } from '../../helpers/api/auth';
 import useLocalStorage from '../../helpers/localStorage';
 import { useRouter } from 'next/navigation';
 import { useTheme } from '@mui/material/styles';
+import { SallaLogo } from '../../assets/looxv-logo';
 
 const IconsContainer = ({children}) => {
   return (
@@ -73,13 +74,13 @@ const Auth = (props) => {
     router.push(`${process.env.BASE_URL}/api/users/login/${provider}`)
   }
   const theme = useTheme();
-  console.log(theme);
+  //https://apps.salla.sa/assets/salla-logo.4d5127c9.svg
   return (
 		<div className={styles.formContainer}>
       <CustomTypography variant="h1">{ login ? "Log in to your account": "Create your account"}</CustomTypography>
       <div className={styles.socialButtons}>
         <CustomButton onClick={() => signWithProvider("google")} startIcon={<IconsContainer><FcGoogle /></IconsContainer>}>Sign in with Google</CustomButton>
-        <CustomButton onClick={() => signWithProvider("salla")}>Sign in with Salla</CustomButton>
+        <CustomButton onClick={() => signWithProvider("salla")} startIcon={<IconsContainer><SallaLogo /></IconsContainer>}>Sign in with Salla</CustomButton>
       </div>
 
       <div className={styles.barContainer}>
