@@ -10,9 +10,7 @@ const adminLayout = ({ children }) => {
         <SideBar/> 
         <section className={styles.admin_details}>
           <Navbar />
-          <div className={styles.formWrapper}>
-            {children}
-          </div>
+          {children}
         </section>
       </main>
     );

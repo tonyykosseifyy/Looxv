@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -61,21 +61,25 @@ const rows = [
 export default function StickyHeadTable() {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
-
+  const [height, setHeight] = useState(0);
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
-
+  useEffect(()=> {
+    window.addEventListener('resize', ()=> {
+        setHeight(window.innerHeight)
+    })
+ }, [])
   const handleChangeRowsPerPage = (event) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden', borderRadius:0 }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <Paper sx={{height:"100%", width: '100%', overflow: 'hidden', borderRadius:0,maxHeight: `${height - 102}px`  }}>
+      <TableContainer sx={{maxHeight:"60vh"}}>
         <Table stickyHeader aria-label="sticky table">
-          <TableHead>
+          <TableHead sx={{marginBottom:"40px"}}>
             <TableRow>
               {columns.map((column) => (
                 <TableCell
@@ -88,6 +92,7 @@ export default function StickyHeadTable() {
               ))}
             </TableRow>
           </TableHead>
+
           <TableBody>
             {rows
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
@@ -98,6 +103,8 @@ export default function StickyHeadTable() {
                       const value = row[column.id];
                       return (
                         <TableCell key={column.id} align={column.align}>
+                            <>
+                            </>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}
@@ -111,7 +118,7 @@ export default function StickyHeadTable() {
         </Table>
       </TableContainer>
       <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
+        rowsPerPageOptions={[5,10,15]}
         component="div"
         count={rows.length}
         rowsPerPage={rowsPerPage}
