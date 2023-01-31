@@ -1,8 +1,7 @@
 "use client"
 import styles from "./styles.module.css";
-import { LogoDark } from "../../assets/looxv-logo";
-import { LoginIllustration } from "../../assets/looxv-logo";
 import { useTheme } from "@mui/material/styles";
+import Image from "next/image";
 
 const authLayout = ({ children }) => {
   const theme = useTheme();
@@ -10,9 +9,9 @@ const authLayout = ({ children }) => {
     return (
       <section className={styles.authWrapper} >
         <div className={styles.illustrationWrapper} style={{backgroundColor: theme.palette.primary.main}}>
-          <LogoDark style={{width: "200px"}} />
+          <Image src="/logo.png" width={300} height={170} alt="lxoov-editor" style={{objectFit:"contain"}} />
           <div>
-            <LoginIllustration />
+            <Image src="/illustration.png" width={865} height={682} alt="lxoov-editor" style={{objectFit:"contain"}} />
           </div>
         </div>
         
