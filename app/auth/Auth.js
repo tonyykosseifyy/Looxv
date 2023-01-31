@@ -68,12 +68,15 @@ const Auth = (props) => {
       router.push("/");
     }
   },[token])
+  const signWithProvider = (provider) => {
+    router.push(`${process.env.BASE_URL}/api/users/login/${provider}`)
+  }
   return (
 		<div className={styles.formContainer}>
       <h1>{ login ? "Log in to your account": "Create your account"}</h1>
       <div className={styles.socialButtons}>
-        <CustomButton startIcon={<IconsContainer><FcGoogle /></IconsContainer>}>Sign in with Google</CustomButton>
-        <CustomButton>Sign in with Google</CustomButton>
+        <CustomButton onClick={() => signWithProvider("google")} startIcon={<IconsContainer><FcGoogle /></IconsContainer>}>Sign in with Google</CustomButton>
+        <CustomButton onClick={() => signWithProvider("salla")}>Sign in with Salla</CustomButton>
       </div>
 
       <div className={styles.barContainer}>
