@@ -1,12 +1,9 @@
 import styles from "./styles.module.css";
-import Link from "next/link";
 
 export const Button = (props) => {
-  const { children, router, title, ...rest } = props ;
-	let isActive = router.pathname === `/admin/${title}`; 
+  const { children, title, ...rest } = props ;
   return (
-		<Link>
-			<button {...rest} className={`${styles.button} ${isActive && styles.buttonActive}`}>{children}</button>
-		</Link>
-  )
+			<button {...rest} className={`${styles.button} ${false && styles.buttonActive}`}>{children}</button>
+  );
 };
+

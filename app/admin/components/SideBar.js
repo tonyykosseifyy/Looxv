@@ -7,23 +7,27 @@ import { FiSettings } from "react-icons/fi";
 import { TbUsers } from "react-icons/tb";
 
 const SideBar = (props) => {
-  const { router } = props ;
   return (
     <section className={styles.sidebar_wrapper}>
       <div className={styles.sidebar_logo}>
-        <Image src="/logo.png" width={130} height={74} alt="lxoov-editor" style={{objectFit:"contain"}}/>
+        <Image src="/logo.png" width={130} height={74} alt="lxoov-editor" />
       </div>
       <p>Dashboard</p>
-      <Button router={router} title="settings">
+      <Button title="settings">
         <FiSettings />
         <p>Settings</p>
       </Button>
-      <Button router={router} title="users">
+      <Button title="users">
         <TbUsers />
         <p>Users</p>
       </Button>
+      <p style={{marginTop:"20px"}}>Authentication</p>
+      <Button title="users">
+        <TbUsers />
+        <p>Logout</p>
+      </Button>
     </section>
-  )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;
