@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import styles from "./styles.module.css";
-import { CustomButton, CustomLink, CustomizedSnackbars } from '../../components/reusableComponents';
+import { CustomButton, CustomLink, CustomizedSnackbars, CustomTypography } from '../../components/reusableComponents';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { AiFillEye , AiFillEyeInvisible} from "react-icons/ai" ;
 import { InputAdornment , IconButton, InputLabel, FormControl, TextField, Checkbox } from '@mui/material';
@@ -9,6 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 import { register, signWithEmail } from '../../helpers/api/auth';
 import useLocalStorage from '../../helpers/localStorage';
 import { useRouter } from 'next/navigation';
+import { useTheme } from '@mui/material/styles';
 
 const IconsContainer = ({children}) => {
   return (
@@ -71,18 +72,20 @@ const Auth = (props) => {
   const signWithProvider = (provider) => {
     router.push(`${process.env.BASE_URL}/api/users/login/${provider}`)
   }
+  const theme = useTheme();
+  console.log(theme);
   return (
 		<div className={styles.formContainer}>
-      <h1>{ login ? "Log in to your account": "Create your account"}</h1>
+      <CustomTypography variant="h1">{ login ? "Log in to your account": "Create your account"}</CustomTypography>
       <div className={styles.socialButtons}>
         <CustomButton onClick={() => signWithProvider("google")} startIcon={<IconsContainer><FcGoogle /></IconsContainer>}>Sign in with Google</CustomButton>
         <CustomButton onClick={() => signWithProvider("salla")}>Sign in with Salla</CustomButton>
       </div>
 
       <div className={styles.barContainer}>
-        <div className={styles.bar} />
-        <span>or</span>
-        <div className={styles.bar} />
+        <div className={styles.bar} style={{backgroundColor:theme.palette.text.primary}}  />
+        <CustomTypography>or</CustomTypography>
+        <div className={styles.bar} style={{backgroundColor:theme.palette.text.primary}} />
       </div>
       
       <form className={styles.formControl}>
@@ -116,7 +119,7 @@ const Auth = (props) => {
             <div>
               <Checkbox checked={check} onClick={() => setCheck(!check)} />
             </div>
-            <p style={{fontSize:"16px"}}>Remember me</p>
+            <CustomTypography>Remember me</CustomTypography>
           </div>
           <CustomLink href="/">Forgot password?</CustomLink>
           
@@ -126,7 +129,7 @@ const Auth = (props) => {
           <div>
             <Checkbox checked={check} onClick={() => setCheck(!check)} />
           </div>
-          <p style={{fontSize:"15px"}}>I agree to Terms of Service & Privacy Policy</p>
+          <CustomTypography sx={{fontSize:"15px"}}>I agree to Terms of Service & Privacy Policy</CustomTypography>
         </div>
         }
 
@@ -135,7 +138,7 @@ const Auth = (props) => {
       </form>
 
       <div className={styles.formEnd}>
-        <p>{ login ? "Don't have an account?" : "Already have an account?"}</p>
+        <CustomTypography>{ login ? "Don't have an account?" : "Already have an account?"}</CustomTypography>
         <CustomLink scroll={false} onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
       </div>
       <CustomizedSnackbars

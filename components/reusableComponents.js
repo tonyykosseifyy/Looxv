@@ -6,6 +6,8 @@ import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import React from 'react';
 import Slide from '@mui/material/Slide';
+import { Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 function SlideTransition(props) {
   return <Slide {...props} direction="up" />;
@@ -54,10 +56,22 @@ export const CustomButton = (props) => {
 			</Button>
     );
 };
-export const CustomLink = (props) => {
+
+export const CustomTypography = (props) => {
+  const theme = useTheme();
   const { children, ...rest} = props ;
   return (
-    <Link {...rest} className={styles.customLink}>{children}</Link>
-  )
-}
+    <Typography {...rest} color={theme.palette.text.primary}>{children}</Typography>
+  );
+};
 
+
+export const CustomLink = (props) => {
+  const { children, ...rest} = props ;
+  const theme = useTheme()
+  return (
+    <Link {...rest} className={styles.customLink}>
+      <Typography sx={{fontWeight:"bold"}} color={theme.palette.primary.main}>{children}</Typography>
+    </Link>
+  )
+};

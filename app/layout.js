@@ -4,7 +4,7 @@ import { Inter } from '@next/font/google';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import useLocalStorage from "../helpers/localStorage";
 import { useRouter } from 'next/navigation';
-
+import { red } from '@mui/material/colors';
 
 const inter = Inter({
   weight: ["300","400","500","600","700","800"],
@@ -14,7 +14,14 @@ const inter = Inter({
 const theme = createTheme({
   typography: {
     fontFamily: 'Inter, sans-serif'
-}});
+  },
+  palette: {
+    mode:"dark",
+    primary: {
+      main: red[500],
+    },
+  },
+});
 
 const RootLayout = ({ children }) => {
   const [ token , updateToken ] = useLocalStorage("token","");

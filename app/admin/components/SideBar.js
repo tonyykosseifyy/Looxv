@@ -5,7 +5,9 @@ import styles from "./sidebar.module.css";
 const SideBar = () => {
   return (
     <section className={styles.sidebar_wrapper}>
-        SideBar
+      <div className={styles.sidebar_logo}>
+        
+      </div>
     </section>
   )
 }

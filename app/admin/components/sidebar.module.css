@@ -1,5 +1,13 @@
 .sidebar_wrapper {
     background-color: var(--light-blue);
-    min-width: 200px ;
+    min-width: 250px ;
+    padding: 40px 0 40px 20px;
+    display: flex;
+    flex-direction: column;
+    color: white ;
+}
+
+.sidebar_logo > svg {
+    text-align: center;
 }
 

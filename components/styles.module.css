@@ -1,10 +1,7 @@
 .customLink {
-    color: var(--light-blue);
     cursor: pointer;
     transition: .3s ease ;
-    font-weight: 600;
 }
 .customLink:hover {
-    color: rgb(137, 186, 235);
-
+    opacity: .5;
 }
