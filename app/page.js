@@ -1,7 +1,5 @@
-
-
 const Page = () => {
-  return <h1>Hello, Next.js!</h1>;
+  return <h1>Hello, Users page</h1>;
 };
 
 
