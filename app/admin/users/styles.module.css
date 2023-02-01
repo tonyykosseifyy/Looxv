@@ -6,14 +6,6 @@
     overflow-y: scroll;
 }
 
-.users_header {
-    position: sticky;
-    top: 0 ;
-    left: 0 ;
-    right: 0 ;
-    font-weight: bold;
-    background-color: rgb(250, 247, 247);
-}
 .grid {
     width: 100%;
     grid-template-rows: 25px ;
@@ -21,6 +13,17 @@
     grid-template-columns: repeat(5, 1fr);
     display: grid;
     place-content: center;
+}
+.users_header {
+    z-index: 100 ;
+    position: sticky;
+    top: 0 ;
+    left: 0 ;
+    right: 0 ;
+    color: black;
+    padding: 15px;
+    box-shadow: 0px 1px 2px rgb(204, 204, 204);
+    background-color: rgb(246,246,246);
 }
 .grid > div {
     display: flex;
@@ -30,10 +33,32 @@
     cursor: pointer;
     margin: 5px 0;
     transition: .1s ease-out;
-    box-shadow: 1px 1px 3px rgb(204, 204, 204);
+    box-shadow: 1px 1px 1px rgb(204, 204, 204);
 }
 
 .rows:hover {
     box-shadow: 2px 2px 6px rgb(145,145,145);
     background-color: rgb(248, 248, 248);
+}
+
+.row_provider {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row_provider_left {
+    display: flex;
+    align-items: center;
+}
+.row_provider_left > svg {
+    margin-right: 10px; 
+    object-fit: contain;
+    width: 20px;
+    height: 20px;
+}
+.row_provider_right svg {
+    font-size: 18px;
+}
+.row_provider_right > div button:last-child:hover {
+    color: red ;
 }

@@ -12,7 +12,7 @@ import { useRouter } from 'next/navigation';
 import { useTheme } from '@mui/material/styles';
 import { SallaLogo } from '../../assets/looxv-logo';
 
-const IconsContainer = ({children}) => {
+export const IconsContainer = ({children}) => {
   return (
     <div className={styles.iconContainer}>{children}</div>
   )
