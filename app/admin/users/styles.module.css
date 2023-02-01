@@ -62,3 +62,15 @@
 .row_provider_right > div button:last-child:hover {
     color: red ;
 }
+
+.user_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.user_form > div {
+    margin: 10px 0 ;
+}
+.users_table {
+    font-size: 14px;
+}

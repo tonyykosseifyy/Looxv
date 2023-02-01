@@ -1,63 +1,127 @@
 "use client"
 import {useState} from 'react'
 import styles from "./styles.module.css";
-import { FcGoogle } from "react-icons/fc";
-import { SallaLogo } from '../../../assets/looxv-logo';
-import { IconButton, TextField } from '@mui/material';
-import { HiOutlineDotsVertical } from "react-icons/hi";
-import { AiOutlineDelete } from "react-icons/ai";
+import ResponsiveDialog from './Dialog';
+import Row from "./Rows";
 
-const items = [
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
-  ["asdkjasd", "tony kosseify", "tonyasda", "asdasd"],
+const users = [
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  },
+  {
+    "id": "ui2bdijq1jns1uoxs",
+    "name" : "tony kosseify",
+    "email": "tonykosseify@gmail.com",
+    "password": "daksdnkjbiqjqdnamsd"
+  }
 ]
 
 function Users() {
-  const [edit, setEdit] = useState();
+  const [edit, setEdit] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [ user, setUser ] = useState({});
+  const open = (user) => {
+    setEdit(true);
+    setUser(user)
+  }
+  const handleEdit = ( user ) => {
+    open(user);
+    setDeleting(false);
+  }
+  const handleDelete = ( user ) => {
+    open(user);
+    setDeleting(true);
+  }
   return (
     <div className={styles.users_wrapper}>
-      <div className={`${styles.users_header} ${styles.grid}`}>
-        <div><p>#user_id</p></div>
-        <div><p>full name</p></div>
-        <div><p>email</p></div>
-        <div><p>password</p></div>
-        <div><p>provider</p></div>
-      </div>
+        <div className={`${styles.users_header} ${styles.grid}`}>
+          <div><p>#user_id</p></div>
+          <div><p>full name</p></div>
+          <div><p>email</p></div>
+          <div><p>password</p></div>
+          <div><p>provider</p></div>
+        </div>
+
       <div className={styles.users_table}>
-        {items.map((item) => (
-          <div key={item} className={`${styles.grid} ${styles.rows}`}>
-            <div><p>{item[0]}</p></div>
-            
-            <div><p>{item[1]}</p></div>
-            <div><p>email</p></div>
-            <div><p>password</p></div>
-            <div className={styles.row_provider}>
-              <div className={styles.row_provider_left}>
-                <FcGoogle />
-                <div><p>Google</p></div>
-              </div>
-              <div className={styles.row_provider_right}>
-                <div>
-                  <IconButton>
-                    <HiOutlineDotsVertical />
-                  </IconButton>
-                  <IconButton>
-                    <AiOutlineDelete style={{fontSize: "18px"}} />
-                  </IconButton>
-                </div>
-              </div>
-            </div>
-          </div>
+        {users.map((user) => (
+          <Row 
+            key={user} 
+            user={user} 
+            handleEdit={() => handleEdit(user)} 
+            handleDelete={() => handleDelete(user)}
+            setOpen={() => setEdit(true)} 
+          />
         ))}
+        <ResponsiveDialog open={edit} setOpen={setEdit} deleting={deleting} user={user} />
       </div>
     </div>
   )
