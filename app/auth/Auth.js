@@ -23,7 +23,7 @@ function scrollToTop() {
 };
 
 const Auth = (props) => {
-  const { login } = props ;
+  const { login, admin } = props ;
   const [ showPassword , setShow ] = useState(false);
   const [ name , setName ] = useState("");
   const [ email , setEmail ] = useState("");
@@ -74,10 +74,10 @@ const Auth = (props) => {
     router.push(`${process.env.BASE_URL}/api/users/login/${provider}`)
   }
   const theme = useTheme();
-  //https://apps.salla.sa/assets/salla-logo.4d5127c9.svg
+ 
   return (
 		<div className={styles.formContainer}>
-      <CustomTypography variant="h1">{ login ? "Log in to your account": "Create your account"}</CustomTypography>
+      <CustomTypography variant="h1">{ login ? admin ? "Log in as admin":"Log in to your account": "Create your account"}</CustomTypography>
       <div className={styles.socialButtons}>
         <CustomButton onClick={() => signWithProvider("google")} startIcon={<IconsContainer><FcGoogle /></IconsContainer>}>Sign in with Google</CustomButton>
         <CustomButton onClick={() => signWithProvider("salla")} startIcon={<IconsContainer><SallaLogo /></IconsContainer>}>Sign in with Salla</CustomButton>
@@ -138,10 +138,12 @@ const Auth = (props) => {
         
       </form>
 
-      <div className={styles.formEnd}>
-        <CustomTypography>{ login ? "Don't have an account?" : "Already have an account?"}</CustomTypography>
-        <CustomLink scroll={false} onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
-      </div>
+      {!admin && 
+        <div className={styles.formEnd}>
+          <CustomTypography>{ login ? "Don't have an account?" : "Already have an account?"}</CustomTypography>
+          <CustomLink scroll={false} onClick={() => scrollToTop()}  href={login ? "/auth/signup": "/auth/login"}>{login ? "Create one" : "Sign In"}</CustomLink>
+        </div>
+      }
       <CustomizedSnackbars
         message={alertMessage}
         open={open}

@@ -22,7 +22,7 @@ const SideBar = () => {
         <p>Users</p>
       </Button>
       <p style={{marginTop:"20px"}}>Authentication</p>
-      <Button title="users">
+      <Button title="logout">
         <TbUsers />
         <p>Logout</p>
       </Button>

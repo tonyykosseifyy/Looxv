@@ -3,6 +3,7 @@ import {useState} from 'react'
 import styles from "./styles.module.css";
 import ResponsiveDialog from './Dialog';
 import Row from "./Rows";
+import { Pagination } from '@mui/material';
 
 const users = [
   {
@@ -122,6 +123,10 @@ function Users() {
           />
         ))}
         <ResponsiveDialog open={edit} setOpen={setEdit} deleting={deleting} user={user} />
+        <div className={styles.pagination}>
+          <Pagination variant="outlined" count={10} />
+        </div>
+        
       </div>
     </div>
   )
