@@ -1,4 +1,3 @@
-const withImages = require('next-images');
 const nextConfig = {
     experimental: {
       appDir: true,
@@ -6,7 +5,9 @@ const nextConfig = {
     // withImages:withImages,
     env: {
       BASE_URL: process.env.BASE_URL,
-    }
+    },
+    reactStrictMode: true,
+    swcMinify: true,
 };
   
 module.exports = nextConfig;
