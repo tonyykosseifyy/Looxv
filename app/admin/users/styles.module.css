@@ -1,6 +1,39 @@
 .users_wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 10px 30px;
+    padding: 0 30px;
     height: 100%;
+    position: relative;
+    max-height: calc(100vh - 140px);
+    overflow-y: scroll;
+}
+
+.users_header {
+    position: sticky;
+    top: 0 ;
+    left: 0 ;
+    right: 0 ;
+    font-weight: bold;
+    background-color: rgb(250, 247, 247);
+}
+.grid {
+    width: 100%;
+    grid-template-rows: 25px ;
+    padding: 10px ;
+    grid-template-columns: repeat(5, 1fr);
+    display: grid;
+    place-content: center;
+}
+.grid > div {
+    display: flex;
+    align-items: center;
+}
+.rows {
+    cursor: pointer;
+    margin: 5px 0;
+    transition: .1s ease-out;
+    box-shadow: 1px 1px 3px rgb(204, 204, 204);
+}
+
+.rows:hover {
+    box-shadow: 2px 2px 6px rgb(145,145,145);
+    background-color: rgb(248, 248, 248);
 }
