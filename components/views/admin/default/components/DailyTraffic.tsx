@@ -1,10 +1,10 @@
 // Chakra imports
 import { Box, Flex, Icon, Text, useColorModeValue } from '@chakra-ui/react';
-import BarChart from 'components/charts/BarChart';
+import BarChart from '../../../../components/charts/BarChart';
 
 // Custom components
-import Card from 'components/card/Card';
-import { barChartDataDailyTraffic, barChartOptionsDailyTraffic } from 'variables/charts';
+import Card from '../../../../components/card/Card';
+import { barChartDataDailyTraffic, barChartOptionsDailyTraffic } from '../../../../variables/charts';
 
 // Assets
 import { RiArrowUpSFill } from 'react-icons/ri';

@@ -8,16 +8,18 @@ import {
 } from 'react-icons/md'
 
 // Admin Imports
-import MainDashboard from 'pages/admin/default'
-import NFTMarketplace from 'pages/admin/nft-marketplace'
-import Profile from 'pages/admin/profile'
-import DataTables from 'pages/admin/data-tables'
-import RTL from 'pages/rtl/rtl-default'
+//pages/admin/default
+import MainDashboard from '../app/admin/index'
+import NFTMarketplace from '../app/admin/nft-marketplace'
+import Profile from '../app/admin/profile'
+import DataTables from '../app/admin/data-tables'
+import RTL from '../app/rtl/rtl-default'
 
+//app/rtl/rtl-default
 // Auth Imports
-import SignInCentered from 'pages/auth/sign-in'
-import { IRoute } from 'types/navigation'
-
+import SignInCentered from '../app/auth/login/page'
+import { IRoute } from '../components/types/navigation'
+//types/navigation
 const routes: IRoute[] = [
   {
     name: 'Main Dashboard',

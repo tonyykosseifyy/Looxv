@@ -20,7 +20,7 @@ import {
   useSortBy,
   useTable
 } from 'react-table'
-import { TableProps } from 'views/admin/default/variables/columnsData'
+import { TableProps } from '../../../../views/admin/default/variables/columnsData'
 
 function TopCreatorTable (props: TableProps) {
   const { columnsData, tableData } = props

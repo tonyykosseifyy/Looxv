@@ -1,14 +1,14 @@
 // Chakra imports
 import { Portal, Box, useDisclosure } from '@chakra-ui/react';
-import Footer from 'components/footer/FooterAdmin';
+import Footer from '../../components/components/footer/FooterAdmin';
 // Layout components
-import Navbar from 'components/navbar/NavbarRTL';
-import Sidebar from 'components/sidebar/Sidebar';
-import { RtlProvider } from 'components/rtlProvider/RtlProvider';
-import { SidebarContext } from 'contexts/SidebarContext';
+import Navbar from '../../components/components/navbar/NavbarRTL';
+import Sidebar from '../../components/components/sidebar/Sidebar';
+import { RtlProvider } from '../../components/components/rtlProvider/RtlProvider';
+import { SidebarContext } from '../../components/contexts/SidebarContext';
 import { PropsWithChildren, useEffect, useState } from 'react';
-import routes from 'routes';
-import { getActiveNavbar, getActiveNavbarText, getActiveRoute, isWindowAvailable } from 'utils/navigation';
+import routes from '../../components/routes';
+import { getActiveNavbar, getActiveNavbarText, getActiveRoute, isWindowAvailable } from '../../components/utils/navigation';
 
 interface RTLLayoutProps extends PropsWithChildren {}
 

@@ -4,7 +4,7 @@
 import { Box, Flex, HStack, Text, useColorModeValue } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { IRoute } from 'types/navigation'
+import { IRoute } from '../../../types/navigation'
 
 interface SidebarLinksProps {
   routes: IRoute[]

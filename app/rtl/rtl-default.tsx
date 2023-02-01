@@ -1,47 +1,26 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2022 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 
 // Chakra imports
 import { Box, Flex, Icon, Select, FormLabel, SimpleGrid, useColorModeValue } from '@chakra-ui/react';
 // Custom components
-import MiniCalendar from 'components/calendar/MiniCalendar';
-import MiniStatistics from 'components/card/MiniStatistics';
-import IconBox from 'components/icons/IconBox';
-import RTLLayout from 'layouts/rtl';
+import MiniCalendar from '../../components/components/calendar/MiniCalendar';
+import MiniStatistics from '../../components/components/card/MiniStatistics';
+import IconBox from '../../components/components/icons/IconBox';
+import RTLLayout from '../../layouts/rtl/index';
 import React from 'react';
 import { MdAddTask, MdAttachMoney, MdBarChart, MdFileCopy } from 'react-icons/md';
-import CheckTable from 'views/admin/default/components/CheckTable';
-import ComplexTable from 'views/admin/default/components/ComplexTable';
-import DailyTraffic from 'views/admin/default/components/DailyTraffic';
-import PieCard from 'views/admin/default/components/PieCard';
-import Tasks from 'views/admin/default/components/Tasks';
-import TotalSpent from 'views/admin/default/components/TotalSpent';
-import WeeklyRevenue from 'views/admin/default/components/WeeklyRevenue';
-import { columnsDataCheck, columnsDataComplex, TableData } from 'views/admin/default/variables/columnsData';
-import tableDataCheck from 'views/admin/default/variables/tableDataCheck.json';
-import tableDataComplex from 'views/admin/default/variables/tableDataComplex.json';
+import CheckTable from '../../components/views/admin/default/components/CheckTable';
+import ComplexTable from '../../components/views/admin/default/components/ComplexTable';
+import DailyTraffic from '../../components/views/admin/default/components/DailyTraffic';
+import PieCard from '../../components/views/admin/default/components/PieCard';
+import Tasks from '../../components/views/admin/default/components/Tasks';
+import TotalSpent from '../../components/views/admin/default/components/TotalSpent';
+import WeeklyRevenue from '../../components/views/admin/default/components/WeeklyRevenue';
+import { columnsDataCheck, columnsDataComplex, TableData } from '../../components/views/admin/default/variables/columnsData';
+import tableDataCheck from '../../components/views/admin/default/variables/tableDataCheck.json';
+import tableDataComplex from '../../components/views/admin/default/variables/tableDataComplex.json';
 // Assets
-import { Image } from 'components/image/Image';
-import Usa from 'img/dashboards/usa.png';
+import { Image } from '../../components/components/image/Image';
+import Usa from '../../components/img/dashboards/usa.png';
 
 export default function RTLDashboard() {
 	// Chakra Color Mode

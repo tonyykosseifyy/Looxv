@@ -13,9 +13,9 @@ import {
 	AspectRatio
 } from '@chakra-ui/react';
 // Custom components
-import Card from 'components/card/Card';
-import { NextAvatar } from 'components/image/Avatar';
-import { Image } from 'components/image/Image';
+import Card from '../../components/card/Card';
+import { NextAvatar } from '../../components/image/Avatar';
+import { Image } from '../../components/image/Image';
 // Assets
 import { useState } from 'react';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
